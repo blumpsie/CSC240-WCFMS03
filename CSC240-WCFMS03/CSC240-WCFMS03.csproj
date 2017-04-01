@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CannotEditException.cs" />
+    <Compile Include="CannotRemoveException.cs" />
+    <Compile Include="DuplicateObjectException.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="ElementSet.cs" />
+    <Compile Include="FullSetException.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Opera.cs" />
     <Compile Include="Program.cs" />

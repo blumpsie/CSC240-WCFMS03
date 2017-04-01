@@ -7,3 +7,6 @@ C:\Users\Blumpsie\Documents\NetBeansProjects\CSC240-WCFMS03\CSC240-WCFMS03\obj\D
 C:\Users\Blumpsie\Documents\Visual Studio 2015\Projects\CSC240-WCFMS03\CSC240-WCFMS03\bin\Debug\CSC240-WCFMS03.exe.config
 C:\Users\Blumpsie\Documents\Visual Studio 2015\Projects\CSC240-WCFMS03\CSC240-WCFMS03\obj\Debug\CSC240-WCFMS03.exe
 C:\Users\Blumpsie\Documents\Visual Studio 2015\Projects\CSC240-WCFMS03\CSC240-WCFMS03\obj\Debug\CSC240-WCFMS03.pdb
+C:\Users\Blumpsie\Documents\C# Projects\CSC240-WCFMS03\CSC240-WCFMS03\bin\Debug\CSC240-WCFMS03.exe.config
+C:\Users\Blumpsie\Documents\C# Projects\CSC240-WCFMS03\CSC240-WCFMS03\obj\Debug\CSC240-WCFMS03.exe
+C:\Users\Blumpsie\Documents\C# Projects\CSC240-WCFMS03\CSC240-WCFMS03\obj\Debug\CSC240-WCFMS03.pdb
