@@ -10,7 +10,7 @@ namespace CSC240_WCFMS03
     {
         public FullSetException() : base("The set is full.") { }
 
-        public FullSetException(string theClass) : base("FullSetException thrown.\n"
+        public FullSetException(string theClass) : base("\nFullSetException thrown.\n"
                                                         + "The " + theClass + " could not be added.\n"
                                                         + "The set is full.") { }
     }

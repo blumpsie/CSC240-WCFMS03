@@ -10,7 +10,7 @@ namespace CSC240_WCFMS03
     {
         public CannotEditException() : base("The object could not be edited.") { }
 
-        public CannotEditException(string theClass) : base("CannotEditException thrown.\n"
+        public CannotEditException(string theClass) : base("\nCannotEditException thrown.\n"
                                                             + "The " + theClass + " you specified is not in the set.") { }
     }
 }

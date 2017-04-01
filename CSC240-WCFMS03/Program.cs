@@ -282,18 +282,26 @@ namespace CSC240_WCFMS03
         {
             Element movie = new Movie();
             movie.readIn();
-            int result = anElementSet.add(movie);
+            bool added = true;
 
             // feedback on the result of the add
-            if (result == 0)
+            try
             {
-                Console.WriteLine("\nThe set is full.");
+                anElementSet.add(movie);
             }
-            else if (result == -1)
+            catch (FullSetException ex)
             {
-                Console.WriteLine("\nThat Movie is already in the set.");
+                added = false;
+                Console.WriteLine(ex.Message);
             }
-            else
+            catch (DuplicateObjectException ex)
+            {
+                added = false;
+                Console.WriteLine(ex.Message);
+            }
+
+
+            if (added)
             {
                 Console.WriteLine("\nSuccessful add.");
             }
@@ -304,18 +312,25 @@ namespace CSC240_WCFMS03
         {
             Element opera = new Opera();
             opera.readIn();
-            int result = anElementSet.add(opera);
+            bool added = true;
 
             // feedback on the result of the add
-            if (result == 0)
+            try
             {
-                Console.WriteLine("\nThe set is full.");
+                anElementSet.add(opera);
             }
-            else if (result == -1)
+            catch (FullSetException ex)
             {
-                Console.WriteLine("\nThat Opera is already in the set.");
+                added = false;
+                Console.WriteLine(ex.Message);
             }
-            else
+            catch (DuplicateObjectException ex)
+            {
+                added = false;
+                Console.WriteLine(ex.Message);
+            }
+
+            if (added)
             {
                 Console.WriteLine("\nSuccessful add.");
             }

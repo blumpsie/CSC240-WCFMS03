@@ -10,7 +10,7 @@ namespace CSC240_WCFMS03
     {
         public CannotRemoveException() : base("Could not remove the object") {}
 
-        public CannotRemoveException(string theClass) : base("CannotRemoveException thrown.\n"
+        public CannotRemoveException(string theClass) : base("\nCannotRemoveException thrown.\n"
                                                             + "The " + theClass + "you specified does not exist.") { }
     }
 }

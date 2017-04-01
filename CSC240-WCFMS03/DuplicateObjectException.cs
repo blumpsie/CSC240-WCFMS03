@@ -10,7 +10,7 @@ namespace CSC240_WCFMS03
     {
         public DuplicateObjectException() : base("The object already exists.") { }
            
-        public DuplicateObjectException(string theClass) : base("DuplicateObjectException throown.\n"
+        public DuplicateObjectException(string theClass) : base("\nDuplicateObjectException throown.\n"
                                                                 + "The " + theClass + " you specified already exists.") { }
     }
 }

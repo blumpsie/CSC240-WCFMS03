@@ -12,7 +12,7 @@ namespace CSC240_WCFMS03
         private Element[] theList;
         private int currentIndex;
         private int currentSize;
-        private const int MAXSETSIZE = 100;
+        private const int MAXSETSIZE = 2;
 
         // Constructor
         public ElementSet()
@@ -81,19 +81,21 @@ namespace CSC240_WCFMS03
         }
 
         // Adds an Element to theList
-        public int add(Element anElement)
+        public void add(Element anObject)
         {
+            string classType = anObject.getClassName();
+
             if (currentSize == MAXSETSIZE)
             {
-                return 0; // set is full
+                throw new FullSetException(classType); // set is full
             }
-            else if (this.isMemberOf(anElement))
+            else if (this.isMemberOf(anObject))
             {
-                return -1; // already in the set
+                throw new DuplicateObjectException(classType); // already in the set
             }
 
             // add to set
-            theList[currentSize] = anElement.clone();
+            theList[currentSize] = anObject.clone();
 
             // increment currentSize
             currentSize++;
@@ -103,8 +105,6 @@ namespace CSC240_WCFMS03
             {
                 currentIndex = 0;
             }
-
-            return 1; // success
         }
 
         // clears the entire set back to empty
