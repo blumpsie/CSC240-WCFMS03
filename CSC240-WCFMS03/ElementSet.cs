@@ -12,7 +12,7 @@ namespace CSC240_WCFMS03
         private Element[] theList;
         private int currentIndex;
         private int currentSize;
-        private const int MAXSETSIZE = 2;
+        private const int MAXSETSIZE = 100;
 
         // Constructor
         public ElementSet()
@@ -181,10 +181,11 @@ namespace CSC240_WCFMS03
         }
 
         // replaces a specified object from theList with an user edited replacement
-        public bool editAnObject(Element editedObject)
+        public void editAnObject(Element editedObject)
         {
             string paramClass = editedObject.getClassName();
             string currClass;
+            bool edited = false;
 
             for (int i = 0; i < currentSize; i++)
             {
@@ -194,12 +195,15 @@ namespace CSC240_WCFMS03
                     if (theList[i].equals(editedObject))
                     {
                         theList[i] = editedObject.clone();
-                        return true; // success
+                        edited = true;
                     }
                 }
             }
 
-            return false; // not found in set
+           if (!edited)
+            {
+                throw new CannotEditException(paramClass);
+            }
         }
     }
 }

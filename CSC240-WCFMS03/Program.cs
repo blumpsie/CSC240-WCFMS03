@@ -93,30 +93,44 @@ namespace CSC240_WCFMS03
                         {
                             Element movie = new Movie(); // create new Movie object
                             movie.readIn();              // get the new information
-                            bool result = theList.editAnObject(movie); // the object and place store the result
+                            bool edited;
 
-                            if(!result)
+                            try
                             {
-                                Console.WriteLine("\nMovie could not be edited, as that movie does not already exist.");
+                                theList.editAnObject(movie);
+                                edited = true;
                             }
-                            else
+                            catch (CannotEditException ex)
                             {
-                                Console.WriteLine("Successful edit.");
+                                Console.WriteLine(ex.Message);
+                                edited = false;
+                            }
+                            
+                            if (edited)
+                            {
+                                Console.WriteLine("\nSuccessful edit.");
                             }
                         }
                         else if (choice[0] == 'O')
                         {
                             Element opera = new Opera(); // create new Opera object
                             opera.readIn();              // get the new information
-                            bool result = theList.editAnObject(opera); // the object and place store the result
+                            bool edited; // the object and place store the result
 
-                            if (!result)
+                            try
                             {
-                                Console.WriteLine("\nOpera could not be edited, as that movie does not already exist.");
+                                theList.editAnObject(opera);
+                                edited = true;
                             }
-                            else
+                            catch (CannotEditException ex)
                             {
-                                Console.WriteLine("Successful edit.");
+                                Console.WriteLine(ex.Message);
+                                edited = false;
+                            }
+
+                            if (edited)
+                            {
+                                Console.WriteLine("\nSuccessful edit.");
                             }
                         }
                         else
@@ -282,12 +296,13 @@ namespace CSC240_WCFMS03
         {
             Element movie = new Movie();
             movie.readIn();
-            bool added = true;
+            bool added;
 
             // feedback on the result of the add
             try
             {
                 anElementSet.add(movie);
+                added = true;
             }
             catch (FullSetException ex)
             {
@@ -312,12 +327,13 @@ namespace CSC240_WCFMS03
         {
             Element opera = new Opera();
             opera.readIn();
-            bool added = true;
+            bool added;
 
             // feedback on the result of the add
             try
             {
                 anElementSet.add(opera);
+                added = true;
             }
             catch (FullSetException ex)
             {
