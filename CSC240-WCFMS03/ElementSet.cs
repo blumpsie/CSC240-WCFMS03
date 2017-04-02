@@ -139,11 +139,12 @@ namespace CSC240_WCFMS03
         }
 
         // Removes a specified object from theList
-        public bool removeAnObject(Element anObject)
+        public void removeAnObject(Element anObject)
         {
             string paramClass = anObject.getClassName();
             string currClass;
             Element lastItem;
+            bool removed = false;
 
             for (int i = 0; i < currentSize; i++)
             {
@@ -172,12 +173,15 @@ namespace CSC240_WCFMS03
                             currentIndex = -1;
                         }
 
-                        return true; // success
+                        removed = true; // success
                     }
                 }
             }
 
-            return false; // not found in set
+            if (!removed) // not found in set
+            {
+                throw new CannotRemoveException(paramClass);
+            }
         }
 
         // replaces a specified object from theList with an user edited replacement

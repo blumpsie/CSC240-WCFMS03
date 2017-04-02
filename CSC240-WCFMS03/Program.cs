@@ -147,15 +147,22 @@ namespace CSC240_WCFMS03
                             Movie movie = new Movie();                        // create new Movie object
                             Console.WriteLine("\nWhat is the title of the Movie that you would like to remove?");
                             movie.Title = Console.ReadLine().ToUpper();               // get the new information
-                            bool result = theList.removeAnObject(movie);    // the object and place store the result
+                            bool removed;    // the object and place store the result
 
-                            if (!result)
+                            try
                             {
-                                Console.WriteLine("\nMovie could not be removed, as that movie does not already exist.");
+                                theList.removeAnObject(movie);
+                                removed = true;
                             }
-                            else
+                            catch (CannotRemoveException ex)
                             {
-                                Console.WriteLine("Successful remove.");
+                                removed = false;
+                                Console.WriteLine(ex.Message);
+                            }
+
+                            if (removed)
+                            {
+                                Console.WriteLine("\nSuccessful remove.");
                             }
                         }
                         else if (choice[0] == 'O')
@@ -163,15 +170,22 @@ namespace CSC240_WCFMS03
                             Opera opera = new Opera(); // create new Opera object
                             Console.WriteLine("\nWhat is the title of the Opera that you would like to remove?");
                             opera.Title = Console.ReadLine().ToUpper();               // get the new information
-                            bool result = theList.removeAnObject(opera); // the object and place store the result
+                            bool removed; // the object and place store the result
 
-                            if (!result)
+                            try
                             {
-                                Console.WriteLine("\nOpera could not be removed, as that movie does not already exist.");
+                                theList.removeAnObject(opera);
+                                removed = true;
                             }
-                            else
+                            catch (CannotRemoveException ex)
                             {
-                                Console.WriteLine("Successful remove.");
+                                removed = false;
+                                Console.WriteLine(ex.Message);
+                            }
+
+                            if (removed)
+                            {
+                                Console.WriteLine("\nSuccessful remove.");
                             }
                         }
                         else
